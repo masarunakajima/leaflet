@@ -1,8 +1,8 @@
 ---
 title: "leaflet"
-author: "masa"
-date: '2023-01-23'
-output: html_document
+#author: "masa"
+#date: '2023-01-23'
+#output: html_document
 ---
 ## Example map
 
