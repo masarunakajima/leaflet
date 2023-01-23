@@ -1,0 +1,13 @@
+  name: "Leaflet"
+  output_dir: "docs"
+  navbar:
+    title: "Leaflet"
+    left:
+    - text: "Home"
+      href: index.html
+    - text: "Leaflet"
+      href: leaflet.html
+  output:
+    html_document:
+      theme: cosmo
+  
