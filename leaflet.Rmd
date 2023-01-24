@@ -55,4 +55,48 @@ df %>%
 
 ```
 
+## Making Custom Markers
+
+
+```{r}
+hopkinsIcon <- makeIcon(
+  iconUrl = "https://brand.jhu.edu/assets/uploads/sites/5/2014/06/university.logo_.small_.horizontal.blue_.jpg",
+  iconWidth = 62*215/230, iconHeight=31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+hopkinsLatLong <- data.frame(
+  lat = c(39.2973166, 39.3288851, 39.2906617, 39.2970681, 39.2824806),
+  lng = c(-76.5929798, -76.6206598, -76.5469683, -76.6150537, -76.6016766)
+)
+
+hopkinsSites <- c(
+  "<a href='https://brand.jhu.edu/university-logo/'>Site 1</a>",
+    "<a href='https://brand.jhu.edu/'>Site 2</a>",
+    "<a href='https://brand.jhu.edu/assets/uploads/sites/5/2019/06/2019-VISUAL-BRAND-GUIDELINES.pdf'>Site 3</a>",
+    "<a href='https://www.jhu.edu/'>Site 4</a>",
+    "<a href='https://coronavirus.jhu.edu/map.html'>Site 5</a>"
+)
+
+hopkinsLatLong %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon=hopkinsIcon, popup = hopkinsSites)
+```
+
+
+## Mapping Clusters
+
+```{r}
+df <- data.frame(lat=runif(500, min=39.25, max=39.35),
+                 lng = runif(500, min=-76.65, max=-76.55))
+df %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(clusterOptions =markerClusterOptions())
+```
+
+
+
+
 
